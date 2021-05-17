@@ -103,7 +103,7 @@
                     <div class="col-sm-10">
                         <div class="form-check">
                             <input class="form-check-input" type="radio"
-                                name="contentType" id="json" value="json"
+                                name="contentType" id="jsonRadio" value="json"
                                 checked>
                             <label class="form-check-label" for="json">
                                 JSON
@@ -111,8 +111,9 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio"
-                                name="contentType" id="json" value="json">
-                            <label class="form-check-label" for="json">
+                                name="contentType" id="paramsRadio"
+                                value="params">
+                            <label class="form-check-label" for="params">
                                 Custom Parameters
                             </label>
                         </div>
@@ -121,7 +122,7 @@
                 </fieldset>
 
                 <!-- PARAMERS BOX.  THIS WILL HIDE ON CLICKING JSON OPTION IN CONTENT TYPE -->
-                <div id="parameter-box">
+                <div id="parameterBox">
                     <div class="form-row row">
                         <div>
                             <label for="url" class="form-label"><strong>Parameter
@@ -139,9 +140,14 @@
                                 placeholder="Enter parameter value1">
                         </div>
                         <div class="col-md-4">
-                            <button class="btn btn-primary">+</button>
+                            <button id="addParams" class="btn btn-primary">+</button>
                         </div>
                     </div>
+                </div>
+
+                <!-- ADDED PARAMETERS  -->
+                <div id="params">
+
                 </div>
 
                 <br>

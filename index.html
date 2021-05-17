@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous">
+
+        <title>Postmaster</title>
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Post Master</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0
+                        navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="#">Contact Us</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <h1 class="my-3">Welcome to Postmaster <svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0
+                    16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8
+                        8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761
+                        8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0
+                        1.808-1.144l-6.57-4.027L8
+                        9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803
+                        3.546z" />
+                    </svg></h1>
+            </div>
+
+            <div class="container">
+
+                <!-- URL BOX -->
+                <div class="mb-3 row">
+                    <label for="url" class="col-sm-2 col-form-label"><strong>URL</strong></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            id="url" placeholder="Enter URL here">
+                    </div>
+                </div>
+
+                <!-- REQUEST TYPE BOX -->
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0"><strong>Request
+                            type</strong></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                name="requestType" id="get" value="get"
+                                checked>
+                            <label class="form-check-label" for="get">
+                                GET
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                name="requestType" id="post" value="post">
+                            <label class="form-check-label" for="post">
+                                POST
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- CONTENT TYPE BOX -->
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0"><strong>Content
+                            type</strong></legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                name="contentType" id="json" value="json"
+                                checked>
+                            <label class="form-check-label" for="json">
+                                JSON
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                name="contentType" id="json" value="json">
+                            <label class="form-check-label" for="json">
+                                Custom Parameters
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- PARAMERS BOX.  THIS WILL HIDE ON CLICKING JSON OPTION IN CONTENT TYPE -->
+                <div id="parameter-box">
+                    <div class="form-row row">
+                        <div>
+                            <label for="url" class="form-label"><strong>Parameter
+                                    1</strong></label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="email" autocomplete="okay"
+                                class="form-control" id="paramKey1"
+                                placeholder="Enter parameter key1">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="password" autocomplete="okay"
+                                class="form-control" id="paramVal1"
+                                placeholder="Enter parameter value1">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- JSON REQUEST BOX.  THIS WILL HIDE ON CLICKING PARAMETERS OPTION IN CONTENT TYPE -->
+                <div class="mb-3" id="reqJsonBox">
+                    <div class="mb-3 row">
+                        <div>
+                            <label for="reqJsonText" class="col-sm-2
+                                col-form-label"><strong>Enter request JSON</strong></label>
+                        </div>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="reqJsonText"
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUBMIT BUTTON THAT TRIGGERS FETCH API -->
+                <div class="mb-3 row">
+                    <div class="col-sm-10">
+                        <buttton id="submit" class="btn btn-primary">SUBMIT</buttton>
+                    </div>
+                </div>
+
+                <!-- JSON RESPONSE BOX  -->
+                <div class="mb-3" id="responseJsonBox">
+                    <div class="mb-3 row">
+                        <div>
+                            <label for="responseJsonText" class="col-sm-2
+                                col-form-label"><strong>Response</strong></label>
+                        </div>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="responseJsonText"
+                                rows="3"> Your response will appear here</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+                integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+                crossorigin="anonymous"></script>
+            <script src="app.js"></script>
+
+        </body>
+    </html>
